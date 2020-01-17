@@ -1,0 +1,4 @@
+allprojects {
+  apply plugin: 'nebula.lint'
+  gradleLint.rules = ["unused-dependency"]
+}
