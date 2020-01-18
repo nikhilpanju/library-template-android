@@ -4,6 +4,7 @@ ext.module_name = "librarytemplate"
 apply from: rootProject.file("gradle/android_library_config.gradle")
 
 dependencies {
+  compileOnly deps.androidx.annotations
   implementation deps.kotlin.stdlib8
 
   testImplementation deps.kotlin.test.mockito

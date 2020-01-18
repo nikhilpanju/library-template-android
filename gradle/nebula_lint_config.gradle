@@ -1,4 +1,7 @@
 allprojects {
-  apply plugin: 'nebula.lint'
-  gradleLint.rules = ["unused-dependency"]
+  apply plugin: "nebula.lint"
+  gradleLint {
+    rules = ["unused-dependency", "unused-exclude-by-dep"]
+    skipForTask('dependencyUpdates')
+  }
 }

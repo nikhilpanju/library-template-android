@@ -23,7 +23,9 @@ class Greeter(
   @VisibleForTesting var context: Context?
 ) {
   /** Greets someone with the given [name]. */
-  fun greet(name: String): String = context?.resources?.getString(R.string.hello_x, name) ?: ""
+  fun greet(name: String): String {
+    return context?.resources?.getString(R.string.hello_x, name).orEmpty()
+  }
 
   /** Releases the [context]. */
   fun dispose() {
