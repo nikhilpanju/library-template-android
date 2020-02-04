@@ -22,8 +22,7 @@ if (versions == null || versions.publish_version == null) {
 task checkBintrayConfig {
   doLast {
     def (user, key) = getBintrayUserAndKey()
-    if (user == null || user.isEmpty() ||
-        key == null || key.isEmpty()) {
+    if (user == null || user.isEmpty() || key == null || key.isEmpty()) {
       throw new IllegalStateException("Must specify Bintray user/API key in your local.properties.")
     }
   }

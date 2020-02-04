@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Aidan Follestad (@afollestad)
+ * Designed and developed by Nikhil Panju (@nikhilpanju)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,29 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.afollestad.librarytemplatesample
+package com.nikhilpanju.librarytemplatesample
 
 import android.view.View
 
 internal object Debouncer {
-  @Volatile private var enabled: Boolean = true
-  private val enableAgain = Runnable { enabled = true }
+    @Volatile private var enabled: Boolean = true
+    private val enableAgain = Runnable { enabled = true }
 
-  fun canPerform(view: View): Boolean {
-    if (enabled) {
-      enabled = false
-      view.post(enableAgain)
-      return true
+    fun canPerform(view: View): Boolean {
+        if (enabled) {
+            enabled = false
+            view.post(enableAgain)
+            return true
+        }
+        return false
     }
-    return false
-  }
 }
 
 internal fun <T : View> T.onClickDebounced(click: (view: T) -> Unit) {
-  setOnClickListener {
-    if (Debouncer.canPerform(it)) {
-      @Suppress("UNCHECKED_CAST")
-      click(it as T)
+    setOnClickListener {
+        if (Debouncer.canPerform(it)) {
+            @Suppress("UNCHECKED_CAST")
+            click(it as T)
+        }
     }
-  }
 }

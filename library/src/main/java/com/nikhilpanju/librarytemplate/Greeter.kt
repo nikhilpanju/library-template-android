@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Aidan Follestad (@afollestad)
+ * Designed and developed by Nikhil Panju (@nikhilpanju)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.afollestad.librarytemplate
+package com.nikhilpanju.librarytemplate
 
 import android.content.Context
 import androidx.annotation.VisibleForTesting
 
 /** @author Aidan Follestad (@afollestad) */
-class Greeter(
-  @VisibleForTesting var context: Context?
-) {
-  /** Greets someone with the given [name]. */
-  fun greet(name: String): String {
-    return context?.resources?.getString(R.string.hello_x, name).orEmpty()
-  }
+class Greeter(@VisibleForTesting var context: Context?) {
+    /** Greets someone with the given [name]. */
+    fun greet(name: String): String =
+        context?.resources?.getString(R.string.hello_x, name).orEmpty()
 
-  /** Releases the [context]. */
-  fun dispose() {
-    context = null
-  }
+    /** Releases the [context]. */
+    fun dispose() {
+        context = null
+    }
 }

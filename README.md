@@ -5,7 +5,7 @@ This repository can be used as a template to create new GitHub repositories for 
 ### Code Formatting
 
 ```gradle
-./gradlew spotlessApply
+gradlew spotlessApply
 ```
 
 *Make sure you update [spotless.license.kt](spotless.license.kt) and [LICENSE.md](LICENSE.md) to reflect your own license and author info!* Other settings for this plugin can be tweaked in [spotless.gradle](spotless.gradle).
@@ -13,7 +13,7 @@ This repository can be used as a template to create new GitHub repositories for 
 ### Check if Dependencies Are Up-to-Date
 
 ```gradle
-./gradlew dependencyUpdates
+gradlew dependencyUpdates
 ```
 
 Settings can be tweaked for this plugin within [versionsPlugin.gradle](versionsPlugin.gradle).
@@ -23,9 +23,9 @@ Settings can be tweaked for this plugin within [versionsPlugin.gradle](versionsP
 Just have to execute:
 
 ```gradle
-./gradlew clean build bintrayUpload
+gradlew clean build bintrayUpload
 ```
-
+ 
 But there are some pre-requisites:
 
 1. Update [bintrayconfig.gradle](bintrayconfig.gradle) to contain your own Bintray username and 

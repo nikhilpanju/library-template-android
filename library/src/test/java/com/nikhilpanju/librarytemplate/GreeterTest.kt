@@ -1,5 +1,5 @@
 /**
- * Designed and developed by Aidan Follestad (@afollestad)
+ * Designed and developed by Nikhil Panju (@nikhilpanju)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.afollestad.librarytemplate
+package com.nikhilpanju.librarytemplate
 
 import android.content.Context
 import android.content.res.Resources
@@ -26,26 +26,26 @@ import com.nhaarman.mockitokotlin2.mock
 import org.junit.Test
 
 class GreeterTest {
-  private val resources = mock<Resources> {
-    on { getString(eq(R.string.hello_x), isA()) } doAnswer { inv ->
-      val name: String = inv.getArgument(1)
-      "Hello, $name!"
+    private val resources = mock<Resources> {
+        on { getString(eq(R.string.hello_x), isA()) } doAnswer { inv ->
+            val name: String = inv.getArgument(1)
+            "Hello, $name!"
+        }
     }
-  }
-  private val context = mock<Context> {
-    on { resources } doReturn resources
-  }
-  private val greeter = Greeter(context)
+    private val context = mock<Context> {
+        on { resources } doReturn resources
+    }
+    private val greeter = Greeter(context)
 
-  @Test fun greet() {
-    val name = "Aidan"
-    assertThat(greeter.greet(name)).isEqualTo("Hello, $name!")
-  }
+    @Test fun greet() {
+        val name = "Aidan"
+        assertThat(greeter.greet(name)).isEqualTo("Hello, $name!")
+    }
 
-  @Test fun dispose() {
-    assertThat(greeter.context).isNotNull()
-    greeter.dispose()
-    assertThat(greeter.context).isNull()
-    assertThat(greeter.greet("Any name")).isEmpty()
-  }
+    @Test fun dispose() {
+        assertThat(greeter.context).isNotNull()
+        greeter.dispose()
+        assertThat(greeter.context).isNull()
+        assertThat(greeter.greet("Any name")).isEmpty()
+    }
 }
