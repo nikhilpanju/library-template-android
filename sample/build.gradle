@@ -1,12 +1,19 @@
-ext.module_group = "com.afollestad"
+ext.module_group = "com.nikhilpanju"
 ext.module_name = "librarytemplatesample"
 
-apply from: rootProject.file("gradle/android_application_config.gradle")
+apply plugin: "com.android.application"
+apply from: rootProject.file("gradle/android_common_config.gradle")
+
+if (module_package_id == null) {
+	throw new IllegalStateException("module_package_id is missing!")
+}
+
+android.defaultConfig.applicationId = module_package_id.replace('-', '')
 
 dependencies {
-  implementation project(":library")
+	implementation project(":library")
 
-  implementation deps.androidx.app_compat
-  implementation deps.androidx.constraint_layout
-  implementation deps.kotlin.stdlib8
+	implementation deps.androidx.app_compat
+	implementation deps.androidx.constraint_layout
+	implementation deps.kotlin.stdlib8
 }

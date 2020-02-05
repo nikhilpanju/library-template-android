@@ -38,7 +38,7 @@ class GreeterTest {
     private val greeter = Greeter(context)
 
     @Test fun greet() {
-        val name = "Aidan"
+        val name = "Nik"
         assertThat(greeter.greet(name)).isEqualTo("Hello, $name!")
     }
 

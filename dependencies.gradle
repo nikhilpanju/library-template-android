@@ -42,7 +42,7 @@ ext.deps = [
     ],
 
     debug: [
-      timber: "com.jakewharton.timber:timber:4.7.1"
+        timber: "com.jakewharton.timber:timber:4.7.1"
     ],
 
     test: [

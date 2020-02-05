@@ -18,7 +18,6 @@ package com.nikhilpanju.librarytemplate
 import android.content.Context
 import androidx.annotation.VisibleForTesting
 
-/** @author Aidan Follestad (@afollestad) */
 class Greeter(@VisibleForTesting var context: Context?) {
     /** Greets someone with the given [name]. */
     fun greet(name: String): String =
